@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap');
+
+/* Global font styles for Monospaced font */
+body {
+    font-family: 'Fira Code', monospace !important;
+    /* Choose your preferred monospaced font */
+    font-size: 15px !important;
+    /* Adjust base font size */
+    line-height: 1.5 !important;
+    /* Adjust line height for readability */
+}
+
+/* Adjust font sizes for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Fira Code', monospace !important;
+    /* Ensure headings also use the monospaced font */
+    font-weight: 600 !important;
+    /* Slightly bolder for headings */
+}
+
+/* Adjust font sizes for specific elements */
+h1 {
+    font-size: 2.2rem !important;
+}
+
+h2 {
+    font-size: 1.8rem !important;
+}
+
+h3 {
+    font-size: 1.5rem !important;
+}
+
+p,
+li,
+a,
+span {
+    font-size: 14px !important;
+    /* Slightly smaller for body text */
+    line-height: 1.6 !important;
+}
+
+/* Optional: Adjust buttons and input fields for monospaced font */
+button,
+input,
+textarea {
+    font-family: 'Fira Code', monospace !important;
+    font-size: 14px !important;
+}
+
+
+/* Ensure body and html take full height */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-night {
+    margin: 10px;
+}
+
+/* Content wrapper takes all available space */
+.content-wrapper {
+    flex: 1;
+}
+body #searchBar{
+    background-color: #f0f0f0 !important;
+}
+body.dark-mode #searchBar{
+    background-color: #222 !important;
+}
+/* Footer styling */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Night Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    /* Dark background */
+    color: #eaeaea;
+    /* Light text */
+}
+
+body.dark-mode .navbar-light {
+    background-color: #444 !important;
+    /* Dark navbar */
+}
+
+body.dark-mode .navbar-light .navbar-brand,
+body.dark-mode .navbar-light .nav-link {
+    color: #eaeaea !important;
+    /* Light text for navbar items */
+}
+
+body.dark-mode .form-control {
+    background-color: #555;
+    /* Dark text fields */
+    color: #eaeaea;
+    /* Light text in input fields */
+    border-color: #666;
+}
+
+body.dark-mode .form-control:focus {
+    transition: 0.01s all ease-in-out;
+
+    border-color: #777;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+body.dark-mode .table {
+    transition: 0.01s all ease-in-out;
+
+    background-color: #121212;
+    /* Dark background for table */
+    color: #eaeaea;
+    /* Light text */
+}
+
+body.dark-mode .table th,
+body.dark-mode .table td {
+    transition: 0.01s all ease-in-out;
+
+    border-color: #666;
+    /* Dark borders for table cells */
+}
+
+body.dark-mode .btn-primary {
+    transition: 0.01s all ease-in-out;
+
+    background-color: #6c757d;
+    /* Button color for dark mode */
+    border-color: #6c757d;
+}
+
+body.dark-mode .btn-outline-secondary {
+    transition: 0.01s all ease-in-out;
+
+    color: #eaeaea;
+    border-color: #666;
+}
+
+body.dark-mode .footer {
+
+    background-color: #444;
+    /* Dark footer background */
+    color: #eaeaea;
+    /* Light footer text */
+}
+
+/* Additional customizations for better design */
+footer p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+body.dark-mode .navbar-light .navbar-toggler-icon {
+
+    background-color: #eaeaea;
+}
+
+body.dark-mode .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+body.dark-mode .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+body.dark-mode .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Night mode toggle button adjustments */
+body.dark-mode #nightModeToggle i {
+
+    color: #eaeaea;
+}
+
+/* Night Mode Styles */
+body.dark-mode .fa-eye,
+body.dark-mode .fa-eye-slash {
+    color: #f1f1f1;
+    /* Light color for the eye icon in night mode */
+}
+
+body:not(.dark-mode) .fa-eye,
+body:not(.dark-mode) .fa-eye-slash {
+    color: #444;
+    /* Default color for the eye icon in light mode */
+}
+
+
+
+body.dark-mode .form-control {
+    background-color: #444444 !important;
+    /* Input field background in night mode */
+    color: #f1f1f1 !important;
+    /* Text color in night mode */
+}
+
+body.dark-mode .card-header {
+    background-color: #333333 !important;
+    /* Darker card header background */
+}
+
+body.dark-mode .btn-primary {
+    background-color: #0056b3 !important;
+    /* Darker button color */
+    border-color: #0056b3 !important;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #004085 !important;
+    /* Darker hover effect */
+    border-color: #004085 !important;
+}
+
+body.dark-mode .text-primary {
+    color: #9aa0b6 !important;
+    /* Lighter text color for links */
+}
+
+body.dark-mode .text-primary:hover {
+    color: #ffffff !important;
+    /* White color for links on hover */
+}
+
+body.dark-mode .form-page {
+    background-color: #333;
+}
+
+footer {
+    background-color: #f8f9fa !important;
+}
+
+body.dark-mode footer {
+    background-color: #222 !important;
+    color: #f1f1f1;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.buttons .btn {
+    margin: 7px;
+}
+
+body.dark-mode .btn-outline-success {
+    color: whitesmoke;
+    background-color: #05203f !important;
+    border: transparent !important;
+}
+
+body.dark-mode .btn-outline-danger {
+    color: whitesmoke;
+    background-color: #121212 !important;
+    border: transparent !important;
+}
+.list-group-item{
+    margin: 5px !important;
+    border: 1px solid rgba(0, 0, 0, .125) !important;
+    border-radius: 15px !important;
+}
+body.dark-mode .list-group-item {
+    color: whitesmoke;
+    background-color: #111 !important;
+    border: 1px solid rgba(255, 255, 255, .125) !important;
+}
+
+/* For the learn  more page */
+body.dark-mode .card {
+    background-color: transparent !important;
+    color: #f8f9fa !important;
+}
+
+body .card {
+    height: 100%;
+    background-color: transparent !important;
+    color: #121212 !important;
+
+}
+
+body .card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+body .card-body-in {
+    height: 20%;
+    font-size: 19px;
+    display: flex;
+}
+
+body .card h3 {
+    max-height: 30%;
+}
+
+body.dark-mode .card-header {
+    background-color: #444 !important;
+}
+
+body .card-body {
+    background-color: transparent !important;
+    height: 100% !important;
+}
+
+body.dark-mode .card-body {
+    background-color: transparent !important;
+    height: 100% !important;
+}
+
+body .card-body p {
+    padding-top: 10px;
+}
+
+body.dark-mode .card-body p {
+    padding-top: 10px;
+    color: #f8f9fa !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: whitesmoke;
+    padding: 20px 10px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1030;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar .nav-link {
+    color: #333;
+    margin: 10px 0;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #dddddd;
+    border-radius: 5px;
+}
+
+.sidebar .profile-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sidebar .profile-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar .profile-section h5 {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    margin-left: 0;
+    padding: 0px 20px 20px 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content-wrapper.sidebar-expanded {
+    margin-left: 250px;
+}
+
+/* Night Mode Styling */
+body.dark-mode .sidebar {
+    background-color: #222;
+}
+
+body.dark-mode .sidebar .nav-link {
+    color: #eaeaea;
+}
+
+body.dark-mode .sidebar .profile-section h5 {
+    color: #eaeaea;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+body.dark-mode .sidebar .nav-link:hover {
+    background-color: #333;
+    color: #eaeaea;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content-wrapper.sidebar-expanded {
+        margin-left: 200px;
+    }
+}
+body .content-wrapper .upper{
+    position: sticky !important;
+    top: 0px;
+    background-color: white;
+    border-bottom: 0.1px solid black;
+    margin-bottom: 15px !important;
+}
+body.dark-mode .content-wrapper .upper{
+    background-color: #121212;
+    border-bottom: 0.1px solid #eaeaea;
+
+}
+
+/* Navigation Icons */
+.nav-icons {
+    padding-top: 20px;
+    display: flex;
+    gap: 15px;
+   
+}
+
+.nav-icons i {
+    padding: 2px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-icons i#nightModeToggle {
+    position: absolute;
+    right: 20px;
+}
+
+body.dark-mode .nav-icons i {
+    color: #eaeaea;
+}
+
+body.dark-mode .content-wrapper .nav-icons a.web-title {
+    text-decoration: none;
+    color: #eaeaea;
+}
+
+body .content-wrapper .nav-icons a.web-title {
+    text-decoration: none;
+    color: #212529;
+}

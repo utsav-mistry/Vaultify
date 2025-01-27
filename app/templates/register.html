@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-95 mb-3" style="z-index: 0;">
+    <div class="col-md-6">
+        <!-- Flash Messages Section -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="alert-container">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <!-- Card for the registration form -->
+        <div class="card shadow-lg">
+            <div class="card-header bg-success text-center py-4">
+                <h3>Register</h3>
+            </div>
+            <div class="p-5 form-page">
+                <form method="POST" action="{{ url_for('register') }}" autocomplete="off">
+                    {{ form.hidden_tag() }}
+
+                    <!-- Flash Messages -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="mt-3">
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+
+                    <!-- Username Field -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        {{ form.username(class="form-control form-control-lg", placeholder="Choose a username") }}
+                        {% if form.username.errors %}
+                        <div class="text-danger mt-1">
+                            {% for error in form.username.errors %}
+                            <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        {{ form.email(class="form-control form-control-lg", placeholder="Enter your email") }}
+                        {% if form.email.errors %}
+                        <div class="text-danger mt-1">
+                            {% for error in form.email.errors %}
+                            <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="mb-3 position-relative">
+                        <label for="password" class="form-label">Password</label>
+                        {{ form.password(class="form-control form-control-lg", placeholder="Create a password",
+                        id="password") }}
+                        <div class="position-absolute end-0  px-3 py-2" id="toggle-password"
+                            style="cursor: pointer; top: 45%;">
+                            <i class="fas fa-eye" id="eye-icon"></i>
+                        </div>
+                        {% if form.password.errors %}
+                        <div class="text-danger mt-1">
+                            {% for error in form.password.errors %}
+                            <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Confirm Password Field -->
+                    <div class="mb-3 position-relative">
+                        <label for="confirm_password" class="form-label">Confirm Password</label>
+                        {{ form.confirm_password(class="form-control form-control-lg",
+                        placeholder="Confirm your password",id="confirm_password") }}
+                        <div class="position-absolute end-0  px-3 py-2" id="toggle-confirm-password"
+                            style="cursor: pointer; top: 45%;">
+                            <i class="fas fa-eye" id="confirm-eye-icon"></i>
+                        </div>
+                        {% if form.confirm_password.errors %}
+                        <div class="text-danger mt-1">
+                            {% for error in form.confirm_password.errors %}
+                            <small>{{ error }}</small>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="mb-3 text-center">
+                        {{ form.submit(class="btn btn-success btn-lg w-100") }}
+                    </div>
+                </form>
+                <p class="text-center">Already have an account? <a href="{{ url_for('login') }}"
+                        class="text-success">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Toggle password visibility
+    document.querySelectorAll('#toggle-password, #toggle-confirm-password').forEach(toggle => {
+        toggle.addEventListener('click', function () {
+            const input = this.previousElementSibling;
+            const icon = this.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    });
+</script>
+
+{% endblock %}

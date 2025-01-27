@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/password_manager/run.py"
+      "dest": "/password_manager/app/routes.py"
     }
   ],
   "env": {

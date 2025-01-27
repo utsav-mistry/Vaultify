@@ -2,18 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "password_manager/run.py",
+      "src": "run.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/password_manager/app/routes.py"
+      "dest": "/run.py"
     }
-  ],
-  "env": {
-    "FLASK_APP": "password_manager/run.py",
-    "FLASK_ENV": "production"
-  }
+  ]
 }
